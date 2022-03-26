@@ -7,12 +7,12 @@ on:
 
   schedule:
   # Github Action 使用世界标准时间（UTC），北京时间（UTC+8）转换为世界标准时需要减去8小时
-    - cron:  '00 08 * * *' # 默认在每天 UTC 08:00（北京时间 16:00）执行
+    - cron:  '05 04/16 * * *' # 默认在每天 UTC 08:00（北京时间 16:00）执行
 
 jobs:
   USER_01:
     runs-on: ubuntu-latest
-    environment: WZXY_CONFIG_01 # 填写需要使用的用户配置对应的环境,请自行根据实际情况修改
+    environment: WZXY_CONFIG_02 # 填写需要使用的用户配置对应的环境,请自行根据实际情况修改
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
