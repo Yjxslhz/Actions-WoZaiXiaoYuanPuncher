@@ -171,8 +171,10 @@ class WoZaiXiaoYuanPuncher:
                 "content": content,
                 "template": "json"
             }
-            requests.post(url, data=msg)
-            print("消息经pushplus推送成功")
+           # requests.post(url, data=msg)
+           # print("消息经pushplus推送成功")
+            if self.status_code != 1 and self.status_code != -1:
+                requests.post(url, data=msg)
         if os.environ.get('BARK_TOKEN'):
             # bark 推送
             notifyToken = os.environ['BARK_TOKEN']
